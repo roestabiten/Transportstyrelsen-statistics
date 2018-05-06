@@ -25,7 +25,7 @@ class TS_dashboard(tk.Tk):
         tk.Tk.configure(self,background='white') # App bg color
         tk.Tk.geometry(self,"800x600") # Set window size
         tk.Tk.wm_title(self,'Transportstyrelsen statistics') # Window title
-        tk.Tk.iconbitmap(self,r'ts_logo_cut.ico') # Window icon
+        tk.Tk.iconbitmap(self,r'pictures/ts_logo_cut.ico') # Window icon
         self.parent = parent
         self.initialize_app()
         self.currentYear = datetime.now().year
@@ -130,7 +130,7 @@ class TS_dashboard(tk.Tk):
         self.startPage.pack()
         
         # Logotype
-        logo_ts = tk.PhotoImage(file=r'TS.PNG')
+        logo_ts = tk.PhotoImage(file=r'pictures/TS.PNG')
         logo_ts_label = tk.Label(self.startPage,image=logo_ts)
         logo_ts_label.image = logo_ts
         logo_ts_label.config(background = 'white')
@@ -180,10 +180,10 @@ class TS_dashboard(tk.Tk):
         
         if api_output == 200:
             api_status = tk.Label(self.startPage, bg='white',text='API connection: Established', pady=20) # Get status
-            api_status_pic = tk.PhotoImage(file=r'connected.png')
+            api_status_pic = tk.PhotoImage(file=r'pictures/connected.png')
         else:
             api_status = tk.Label(self.startPage, bg='white',text='API status: Not established', pady=20) # Get status
-            api_status_pic = tk.PhotoImage(file=r'disconnected.png')
+            api_status_pic = tk.PhotoImage(file=r'pictures/disconnected.png')
         
         api_status_pic_label = tk.Label(self.startPage, image=api_status_pic, background="white")
         api_status_pic.image = api_status_pic
